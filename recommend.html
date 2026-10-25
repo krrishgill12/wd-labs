@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get a movie recommendation based on your preferences on CineGo.">
+    <meta name="author" content="Krrish">
+    <title>CineGo - Recommendations</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="site-header-inner">
+            <a href="index.html"><img class="logo" src="images/logo.png" alt="CineGo logo"></a>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="movies.html">Movies</a></li>
+                    <li><a href="recommend.html" class="active">Recommendations</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="booking.html">Book Tickets</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h1>Find a Movie For You</h1>
+            <p>Tell us your preferred genre, age group and who you're watching with, and we'll suggest a matching movie.</p>
+
+            <form id="recommendForm">
+                <div class="form-group">
+                    <label for="genre">Preferred genre</label>
+                    <select id="genre" name="genre" required>
+                        <option value="Action">Action</option>
+                        <option value="Fantasy">Fantasy</option>
+                        <option value="Sci-Fi">Sci-Fi</option>
+                        <option value="Comedy">Comedy</option>
+                        <option value="Animation">Animation</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Horror">Horror</option>
+                        <option value="Romance">Romance</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="ageGroup">Age group</label>
+                    <select id="ageGroup" name="ageGroup" required>
+                        <option value="Child">Child</option>
+                        <option value="Teen">Teen</option>
+                        <option value="Adult">Adult</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="viewing">Viewing preference</label>
+                    <select id="viewing" name="viewing" required>
+                        <option value="Family">Family</option>
+                        <option value="Date Night">Date Night</option>
+                        <option value="Friends">Friends</option>
+                        <option value="Solo">Solo</option>
+                    </select>
+                </div>
+
+                <button type="submit">Get Recommendations</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Suggestions</h2>
+            <!-- Populated by js/script.js (initRecommendPage / renderRecommendations) -->
+            <div id="recommendResults"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CineGo. Created for COS10005 Assignment 2 (Swinburne University of Technology).</p>
+    </footer>
+</body>
+</html>

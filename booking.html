@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book movie tickets on CineGo.">
+    <meta name="author" content="Krrish">
+    <title>CineGo - Book Tickets</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="site-header-inner">
+            <a href="index.html"><img class="logo" src="images/logo.png" alt="CineGo logo"></a>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="movies.html">Movies</a></li>
+                    <li><a href="recommend.html">Recommendations</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="booking.html" class="active">Book Tickets</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h1>Book Your Tickets</h1>
+            <p>
+                If you arrived here from the Movies or Recommendations page, your movie
+                choice is already filled in below. You can always change it using the
+                dropdown.
+            </p>
+
+           
+            <form id="bookingForm" method="POST" action="http://mercury.swin.edu.au/it000000/cos10005/regtest.php" novalidate>
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" autocomplete="name">
+                </div>
+
+                <div class="form-group">
+                    <label for="bookingEmail">Email Address</label>
+                    <input type="email" id="bookingEmail" name="bookingEmail" autocomplete="email">
+                </div>
+
+                <div class="form-group">
+                    <label for="bookingPhone">Phone Number</label>
+                    <input type="tel" id="bookingPhone" name="bookingPhone" autocomplete="tel">
+                </div>
+
+                <div class="form-group">
+                    <label for="movieSelect">Movie Selection</label>
+                    <!-- Options are added dynamically from the movies array in script.js -->
+                    <select id="movieSelect" name="movieSelect">
+                        <option value="">-- Select a movie --</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="screeningDateTime">Screening Date &amp; Time</label>
+                    <input type="datetime-local" id="screeningDateTime" name="screeningDateTime">
+                </div>
+
+                <div class="form-group">
+                    <label for="ticketCount">Number of Tickets</label>
+                    <input type="number" id="ticketCount" name="ticketCount" min="1" value="1">
+                </div>
+
+                <div class="form-group">
+                    <label for="ticketType">Ticket Type</label>
+                    <select id="ticketType" name="ticketType">
+                        <option value="Adult">Adult</option>
+                        <option value="Child">Child</option>
+                        <option value="Student">Student</option>
+                    </select>
+                </div>
+
+                <p id="costDisplay">Total cost: $0.00</p>
+
+                <div class="form-group">
+                    <label for="specialRequests">Special Requests (optional)</label>
+                    <input type="text" id="specialRequests" name="specialRequests">
+                </div>
+
+                <div class="form-group">
+                    <label for="paymentMethod">Payment Method</label>
+                    <select id="paymentMethod" name="paymentMethod">
+                        <option value="">-- Select --</option>
+                        <option value="Voucher">Voucher</option>
+                        <option value="Online">Online Payment</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="voucherGroup" hidden>
+                    <label for="voucherCode">Voucher Code (12 digits)</label>
+                    <input type="text" id="voucherCode" name="voucherCode" inputmode="numeric" maxlength="12">
+                </div>
+
+                <div class="form-group" id="cardGroup" hidden>
+                    <label for="cardType">Card Type</label>
+                    <select id="cardType" name="cardType">
+                        <option value="Visa/Mastercard">Visa / Mastercard (16 digits)</option>
+                        <option value="Amex">American Express (15 digits)</option>
+                    </select>
+                    <label for="cardNumber">Card Number (fake test data only)</label>
+                    <input type="text" id="cardNumber" name="cardNumber" inputmode="numeric" maxlength="16">
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox-row">
+                        <input type="checkbox" id="sameAsEmail" name="sameAsEmail">
+                        <label for="sameAsEmail">Billing email same as email address above</label>
+                    </div>
+                    <label for="billingEmail">Billing Email Address</label>
+                    <input type="email" id="billingEmail" name="billingEmail" autocomplete="email">
+                </div>
+
+                <div id="bookingErrors" class="error-list"></div>
+                <p id="bookingStatus" class="status-message"></p>
+
+                <button type="submit">Confirm Booking</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CineGo. Created for COS10005 Assignment 2 (Swinburne University of Technology).</p>
+    </footer>
+</body>
+</html>
