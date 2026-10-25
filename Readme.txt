@@ -25,7 +25,8 @@ GITHUB REPOSITORY
 ------------------------------------------------------------
 
 live site: https://krrishgill12.github.io/wd-labs/index.html
-repo : 
+repo : https://github.com/krrishgill12/wd-labs
+
 
 ------------------------------------------------------------
 REFERENCES
