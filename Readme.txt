@@ -24,8 +24,8 @@ http://mercury.swin.edu.au/cos10005/s106091369/assignment2/index.html
 GITHUB REPOSITORY
 ------------------------------------------------------------
 
-
-
+live site: https://krrishgill12.github.io/wd-labs/index.html
+repo : 
 
 ------------------------------------------------------------
 REFERENCES
